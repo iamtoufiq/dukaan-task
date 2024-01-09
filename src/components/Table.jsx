@@ -26,7 +26,7 @@ const Table = () => {
       >
         <TableFilters />
         <div className="max-w-full overflow-x-auto">
-          <table className="w-full text-left border-collapse">
+          <table className="w-full text-left border-collapse ">
             <thead>
               <tr className="bg-[#f2f2f2]">
                 <th className="text-text py-2.5 px-3 font-medium bg-[#F2F2F2] rounded-l text-sm">
@@ -92,17 +92,13 @@ const Table = () => {
               {data
                 .slice((page - 1) * productsPerPage, page * productsPerPage)
                 ?.map(
-                  (
-                    { orderId, OrderDate, OrderAmount, TransactionFees },
-                    index
-                  ) => (
+                  ({ orderId, OrderDate, OrderAmount, TransactionFees }) => (
                     <TableCardItem
                       key={orderId}
                       orderId={orderId}
                       OrderDate={OrderDate}
                       OrderAmount={OrderAmount}
                       TransactionFees={TransactionFees}
-                      index={index}
                     />
                   )
                 )}
