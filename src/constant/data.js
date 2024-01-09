@@ -1,5 +1,11 @@
 export const tableData = [
   {
+    orderId: 281232,
+    OrderDate: "30 July, 2023",
+    OrderAmount: "₹1,567.89",
+    TransactionFees: "₹28",
+  },
+  {
     orderId: 281209,
     OrderDate: "7 July, 2023",
     OrderAmount: "₹1,278.23",
