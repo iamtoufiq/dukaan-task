@@ -1,7 +1,9 @@
-const TableFilters = () => {
+import PropTypes from "prop-types";
+
+const TableFilters = ({ handleSearchChange }) => {
   return (
-    <section className="flex justify-between">
-      <aside className="flex w-fit space-x-2 py-2.5 px-4 flex-[0.95] md:flex-grow-0 items-center border border-border rounded">
+    <section className="flex justify-between w-full">
+      <aside className="flex w-fit space-x-2 py-2.5 px-[2px] sm:px-4 flex-[0.95] md:flex-grow-0 items-center border border-border rounded">
         <svg
           width="14"
           height="14"
@@ -22,8 +24,10 @@ const TableFilters = () => {
           </defs>
         </svg>
         <input
-          className="bg-white outline-none text-sm font-normal w-44 placeholder:text-[#999]"
-          placeholder="Order ID or transaction ID"
+          type="number"
+          className="bg-white outline-none text-sm font-normal w-44 placeholder:text-[#999] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none [-moz-appearance:textfield]"
+          placeholder="Search by order ID..."
+          onChange={handleSearchChange}
         />
       </aside>
       <aside className="flex items-center space-x-4">
@@ -80,5 +84,7 @@ const TableFilters = () => {
     </section>
   );
 };
-
+TableFilters.propTypes = {
+  handleSearchChange: PropTypes.func.isRequired,
+};
 export default TableFilters;
